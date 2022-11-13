@@ -16,6 +16,12 @@
 		FCEA919E2921ACE90079463F /* BookStore_AdrielFreireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA919D2921ACE90079463F /* BookStore_AdrielFreireTests.swift */; };
 		FCEA91A82921ACE90079463F /* BookStore_AdrielFreireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91A72921ACE90079463F /* BookStore_AdrielFreireUITests.swift */; };
 		FCEA91AA2921ACE90079463F /* BookStore_AdrielFreireUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91A92921ACE90079463F /* BookStore_AdrielFreireUITestsLaunchTests.swift */; };
+		FCEA91BA2921AF970079463F /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91B92921AF970079463F /* NetworkProvider.swift */; };
+		FCEA91BC2921AFBE0079463F /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91BB2921AFBE0079463F /* Cancellable.swift */; };
+		FCEA91C02921B0120079463F /* URLSessionDataTask+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91BF2921B0120079463F /* URLSessionDataTask+Cancellable.swift */; };
+		FCEA91C22921B02F0079463F /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91C12921B02F0079463F /* RequestType.swift */; };
+		FCEA91C42921B0480079463F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91C32921B0480079463F /* NetworkService.swift */; };
+		FCEA91C62921B0C20079463F /* DefaultNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91C52921B0C20079463F /* DefaultNetworkProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		FCEA91A32921ACE90079463F /* BookStore_AdrielFreireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookStore_AdrielFreireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEA91A72921ACE90079463F /* BookStore_AdrielFreireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore_AdrielFreireUITests.swift; sourceTree = "<group>"; };
 		FCEA91A92921ACE90079463F /* BookStore_AdrielFreireUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore_AdrielFreireUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FCEA91B92921AF970079463F /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		FCEA91BB2921AFBE0079463F /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		FCEA91BF2921B0120079463F /* URLSessionDataTask+Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionDataTask+Cancellable.swift"; sourceTree = "<group>"; };
+		FCEA91C12921B02F0079463F /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		FCEA91C32921B0480079463F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		FCEA91C52921B0C20079463F /* DefaultNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,7 @@
 		FCEA91852921ACDF0079463F /* BookStore_AdrielFreire */ = {
 			isa = PBXGroup;
 			children = (
+				FCEA91B62921AF0F0079463F /* Network */,
 				FCEA91862921ACDF0079463F /* AppDelegate.swift */,
 				FCEA91882921ACDF0079463F /* SceneDelegate.swift */,
 				FCEA918A2921ACDF0079463F /* ViewController.swift */,
@@ -125,6 +138,51 @@
 				FCEA91A92921ACE90079463F /* BookStore_AdrielFreireUITestsLaunchTests.swift */,
 			);
 			path = BookStore_AdrielFreireUITests;
+			sourceTree = "<group>";
+		};
+		FCEA91B62921AF0F0079463F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91BD2921AFDE0079463F /* NetworkService */,
+				FCEA91B72921AF700079463F /* NetworkProvider */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FCEA91B72921AF700079463F /* NetworkProvider */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91BE2921AFFA0079463F /* Extensions */,
+				FCEA91B82921AF820079463F /* Protocols */,
+				FCEA91C52921B0C20079463F /* DefaultNetworkProvider.swift */,
+			);
+			path = NetworkProvider;
+			sourceTree = "<group>";
+		};
+		FCEA91B82921AF820079463F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91B92921AF970079463F /* NetworkProvider.swift */,
+				FCEA91BB2921AFBE0079463F /* Cancellable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FCEA91BD2921AFDE0079463F /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91C12921B02F0079463F /* RequestType.swift */,
+				FCEA91C32921B0480079463F /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		FCEA91BE2921AFFA0079463F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91BF2921B0120079463F /* URLSessionDataTask+Cancellable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCEA91C02921B0120079463F /* URLSessionDataTask+Cancellable.swift in Sources */,
+				FCEA91BC2921AFBE0079463F /* Cancellable.swift in Sources */,
+				FCEA91C42921B0480079463F /* NetworkService.swift in Sources */,
+				FCEA91C62921B0C20079463F /* DefaultNetworkProvider.swift in Sources */,
+				FCEA91C22921B02F0079463F /* RequestType.swift in Sources */,
 				FCEA918B2921ACDF0079463F /* ViewController.swift in Sources */,
+				FCEA91BA2921AF970079463F /* NetworkProvider.swift in Sources */,
 				FCEA91872921ACDF0079463F /* AppDelegate.swift in Sources */,
 				FCEA91892921ACDF0079463F /* SceneDelegate.swift in Sources */,
 			);
