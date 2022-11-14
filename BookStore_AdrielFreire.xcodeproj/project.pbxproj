@@ -22,6 +22,8 @@
 		FCEA91C22921B02F0079463F /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91C12921B02F0079463F /* RequestType.swift */; };
 		FCEA91C42921B0480079463F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91C32921B0480079463F /* NetworkService.swift */; };
 		FCEA91C62921B0C20079463F /* DefaultNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91C52921B0C20079463F /* DefaultNetworkProvider.swift */; };
+		FCEA91C82921B24C0079463F /* BookAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91C72921B24C0079463F /* BookAPIService.swift */; };
+		FCEA91CC2921B91B0079463F /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91CB2921B91B0079463F /* BookModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		FCEA91C12921B02F0079463F /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		FCEA91C32921B0480079463F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		FCEA91C52921B0C20079463F /* DefaultNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkProvider.swift; sourceTree = "<group>"; };
+		FCEA91C72921B24C0079463F /* BookAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAPIService.swift; sourceTree = "<group>"; };
+		FCEA91CB2921B91B0079463F /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		FCEA91852921ACDF0079463F /* BookStore_AdrielFreire */ = {
 			isa = PBXGroup;
 			children = (
+				FCEA91CA2921B90A0079463F /* Models */,
 				FCEA91B62921AF0F0079463F /* Network */,
 				FCEA91862921ACDF0079463F /* AppDelegate.swift */,
 				FCEA91882921ACDF0079463F /* SceneDelegate.swift */,
@@ -173,6 +178,7 @@
 			children = (
 				FCEA91C12921B02F0079463F /* RequestType.swift */,
 				FCEA91C32921B0480079463F /* NetworkService.swift */,
+				FCEA91C72921B24C0079463F /* BookAPIService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -183,6 +189,14 @@
 				FCEA91BF2921B0120079463F /* URLSessionDataTask+Cancellable.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FCEA91CA2921B90A0079463F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91CB2921B91B0079463F /* BookModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,8 +331,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCEA91C02921B0120079463F /* URLSessionDataTask+Cancellable.swift in Sources */,
+				FCEA91C82921B24C0079463F /* BookAPIService.swift in Sources */,
 				FCEA91BC2921AFBE0079463F /* Cancellable.swift in Sources */,
 				FCEA91C42921B0480079463F /* NetworkService.swift in Sources */,
+				FCEA91CC2921B91B0079463F /* BookModel.swift in Sources */,
 				FCEA91C62921B0C20079463F /* DefaultNetworkProvider.swift in Sources */,
 				FCEA91C22921B02F0079463F /* RequestType.swift in Sources */,
 				FCEA918B2921ACDF0079463F /* ViewController.swift in Sources */,

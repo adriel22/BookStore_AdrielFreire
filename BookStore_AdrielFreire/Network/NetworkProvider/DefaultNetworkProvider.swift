@@ -7,6 +7,7 @@
 
 import Foundation
 struct DefaultNetworkProvider: NetworkProvider {
+    @discardableResult
     func fetch<T>(model: T.Type, with configuration: NetworkService, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable where T : Decodable, T : Encodable {
         
         guard var urlComponents = URLComponents(string: configuration.baseURL) else {
