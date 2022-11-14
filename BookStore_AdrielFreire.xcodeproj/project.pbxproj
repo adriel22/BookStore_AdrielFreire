@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		FCEA91872921ACDF0079463F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91862921ACDF0079463F /* AppDelegate.swift */; };
 		FCEA91892921ACDF0079463F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91882921ACDF0079463F /* SceneDelegate.swift */; };
-		FCEA918B2921ACDF0079463F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA918A2921ACDF0079463F /* ViewController.swift */; };
-		FCEA918E2921ACDF0079463F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCEA918C2921ACDF0079463F /* Main.storyboard */; };
 		FCEA91902921ACE80079463F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEA918F2921ACE80079463F /* Assets.xcassets */; };
 		FCEA91932921ACE80079463F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCEA91912921ACE80079463F /* LaunchScreen.storyboard */; };
 		FCEA919E2921ACE90079463F /* BookStore_AdrielFreireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA919D2921ACE90079463F /* BookStore_AdrielFreireTests.swift */; };
@@ -24,6 +22,11 @@
 		FCEA91C62921B0C20079463F /* DefaultNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91C52921B0C20079463F /* DefaultNetworkProvider.swift */; };
 		FCEA91C82921B24C0079463F /* BookAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91C72921B24C0079463F /* BookAPIService.swift */; };
 		FCEA91CC2921B91B0079463F /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91CB2921B91B0079463F /* BookModel.swift */; };
+		FCEA91D02921CD210079463F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91CE2921CD200079463F /* HomeViewController.swift */; };
+		FCEA91D12921CD210079463F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEA91CF2921CD200079463F /* HomeViewController.xib */; };
+		FCEA91D52921CD8D0079463F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91D42921CD8D0079463F /* Coordinator.swift */; };
+		FCEA91D72921CDED0079463F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91D62921CDED0079463F /* MainCoordinator.swift */; };
+		FCEA91DA2921CE790079463F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91D92921CE790079463F /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +50,6 @@
 		FCEA91832921ACDF0079463F /* BookStore_AdrielFreire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStore_AdrielFreire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEA91862921ACDF0079463F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCEA91882921ACDF0079463F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FCEA918A2921ACDF0079463F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FCEA918D2921ACDF0079463F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCEA918F2921ACE80079463F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCEA91922921ACE80079463F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCEA91942921ACE80079463F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +66,11 @@
 		FCEA91C52921B0C20079463F /* DefaultNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkProvider.swift; sourceTree = "<group>"; };
 		FCEA91C72921B24C0079463F /* BookAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAPIService.swift; sourceTree = "<group>"; };
 		FCEA91CB2921B91B0079463F /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		FCEA91CE2921CD200079463F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FCEA91CF2921CD200079463F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		FCEA91D42921CD8D0079463F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FCEA91D62921CDED0079463F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		FCEA91D92921CE790079463F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,12 +121,11 @@
 		FCEA91852921ACDF0079463F /* BookStore_AdrielFreire */ = {
 			isa = PBXGroup;
 			children = (
+				FCEA91DB2921CEE10079463F /* Commons */,
+				FCEA91D32921CD630079463F /* Coordinators */,
+				FCEA91CD2921CCE60079463F /* Home */,
 				FCEA91CA2921B90A0079463F /* Models */,
 				FCEA91B62921AF0F0079463F /* Network */,
-				FCEA91862921ACDF0079463F /* AppDelegate.swift */,
-				FCEA91882921ACDF0079463F /* SceneDelegate.swift */,
-				FCEA918A2921ACDF0079463F /* ViewController.swift */,
-				FCEA918C2921ACDF0079463F /* Main.storyboard */,
 				FCEA918F2921ACE80079463F /* Assets.xcassets */,
 				FCEA91912921ACE80079463F /* LaunchScreen.storyboard */,
 				FCEA91942921ACE80079463F /* Info.plist */,
@@ -197,6 +202,50 @@
 				FCEA91CB2921B91B0079463F /* BookModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FCEA91CD2921CCE60079463F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91D82921CE500079463F /* ViewModel */,
+				FCEA91D22921CD250079463F /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FCEA91D22921CD250079463F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91CE2921CD200079463F /* HomeViewController.swift */,
+				FCEA91CF2921CD200079463F /* HomeViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FCEA91D32921CD630079463F /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91D42921CD8D0079463F /* Coordinator.swift */,
+				FCEA91D62921CDED0079463F /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		FCEA91D82921CE500079463F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91D92921CE790079463F /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FCEA91DB2921CEE10079463F /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91862921ACDF0079463F /* AppDelegate.swift */,
+				FCEA91882921ACDF0079463F /* SceneDelegate.swift */,
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,7 +354,7 @@
 			files = (
 				FCEA91932921ACE80079463F /* LaunchScreen.storyboard in Resources */,
 				FCEA91902921ACE80079463F /* Assets.xcassets in Resources */,
-				FCEA918E2921ACDF0079463F /* Main.storyboard in Resources */,
+				FCEA91D12921CD210079463F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,16 +380,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCEA91C02921B0120079463F /* URLSessionDataTask+Cancellable.swift in Sources */,
+				FCEA91D72921CDED0079463F /* MainCoordinator.swift in Sources */,
 				FCEA91C82921B24C0079463F /* BookAPIService.swift in Sources */,
+				FCEA91D52921CD8D0079463F /* Coordinator.swift in Sources */,
 				FCEA91BC2921AFBE0079463F /* Cancellable.swift in Sources */,
 				FCEA91C42921B0480079463F /* NetworkService.swift in Sources */,
 				FCEA91CC2921B91B0079463F /* BookModel.swift in Sources */,
 				FCEA91C62921B0C20079463F /* DefaultNetworkProvider.swift in Sources */,
 				FCEA91C22921B02F0079463F /* RequestType.swift in Sources */,
-				FCEA918B2921ACDF0079463F /* ViewController.swift in Sources */,
 				FCEA91BA2921AF970079463F /* NetworkProvider.swift in Sources */,
 				FCEA91872921ACDF0079463F /* AppDelegate.swift in Sources */,
 				FCEA91892921ACDF0079463F /* SceneDelegate.swift in Sources */,
+				FCEA91DA2921CE790079463F /* HomeViewModel.swift in Sources */,
+				FCEA91D02921CD210079463F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,14 +429,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FCEA918C2921ACDF0079463F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FCEA918D2921ACDF0079463F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FCEA91912921ACE80079463F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -522,7 +566,7 @@
 				INFOPLIST_FILE = BookStore_AdrielFreire/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -550,7 +594,7 @@
 				INFOPLIST_FILE = BookStore_AdrielFreire/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
