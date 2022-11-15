@@ -31,6 +31,10 @@ final class BookDetailsViewModel {
         return details
     }
     
+    func getSaleLink() -> String? {
+        volume.saleInfo.buyLink
+    }
+    
     private func getAuthorsString() -> String{
         var authors = ""
         volume.volumeInfo.authors.forEach { author in

@@ -45,18 +45,32 @@ extension BookDetailsViewController {
     
     private func setupTable() {
         detailsTableView.dataSource = self
-        detailsTableView.registerCell(type: MovieDetailTableViewCell.self)
+        detailsTableView.registerCell(type: BookDetailTableViewCell.self)
+        detailsTableView.registerCell(type: BookSaleTableViewCell.self)
     }
 }
 
 // MARK: - TableView Methods
 extension BookDetailsViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        let numberOfSections = viewModel.getSaleLink() != nil ? 2: 1
+        return numberOfSections
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.getVolumeDetails().count
+        if section == 1, viewModel.getSaleLink() != nil {
+            return 1
+        }
+        return viewModel.getVolumeDetails().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        tableView.dequeueCell(withType: MovieDetailTableViewCell.self, for: indexPath) { cell in
+        if indexPath.section == 1, let saleLink = self.viewModel.getSaleLink() {
+            return tableView.dequeueCell(withType: BookSaleTableViewCell.self, for: indexPath) { cell in
+                cell.setup(withSaleLink: saleLink)
+            }
+        }
+        return tableView.dequeueCell(withType: BookDetailTableViewCell.self, for: indexPath) { cell in
             let detail = self.viewModel.getVolumeDetails()[indexPath.item]
             cell.setup(withTitle: detail.title, content: detail.content)
         }

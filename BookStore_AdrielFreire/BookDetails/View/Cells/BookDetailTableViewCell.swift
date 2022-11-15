@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MovieDetailTableViewCell: UITableViewCell {
+final class BookDetailTableViewCell: UITableViewCell {
     @IBOutlet private weak var contentTitleLabel: UILabel!
     @IBOutlet private weak var contentLabel: UILabel!
     override func awakeFromNib() {

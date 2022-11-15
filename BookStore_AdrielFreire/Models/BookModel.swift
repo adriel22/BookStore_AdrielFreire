@@ -16,6 +16,7 @@ struct VolumesDTO: Codable {
 
 struct Volume: Codable {
     let volumeInfo: VolumeInfo
+    let saleInfo: SaleInfo
 }
 
 struct VolumeInfo: Codable {
@@ -28,4 +29,8 @@ struct VolumeInfo: Codable {
 struct ImageLinks: Codable {
     let smallThumbnail: String
     let thumbnail: String
+}
+
+struct SaleInfo: Codable {
+    let buyLink: String?
 }
