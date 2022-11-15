@@ -28,9 +28,11 @@ final class HomeViewController: UIViewController {
 extension HomeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initialSetup()
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        booksCollectionView.reloadData()
     }
 }
 

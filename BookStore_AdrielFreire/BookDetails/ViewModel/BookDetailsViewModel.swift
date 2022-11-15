@@ -44,4 +44,17 @@ final class BookDetailsViewModel {
         authors = String(authors.dropLast(2))
         return authors
     }
+    
+    func didSelectFavotire() {
+        if isItemSaved() {
+            CoreDataManager.shared.remove(volume.id)
+            return
+        }
+        CoreDataManager.shared.save(volume.id)
+    }
+    
+    func isItemSaved() -> Bool{
+        let ids = CoreDataManager.shared.retrieveSavedIDs()
+        return ids.contains(where: {$0 == volume.id})
+    }
 }

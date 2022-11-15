@@ -33,6 +33,7 @@ extension BookDetailsViewController {
         
         setupThumbnail()
         setupTable()
+        setupNavigationBar()
     }
 }
 
@@ -47,6 +48,20 @@ extension BookDetailsViewController {
         detailsTableView.dataSource = self
         detailsTableView.registerCell(type: BookDetailTableViewCell.self)
         detailsTableView.registerCell(type: BookSaleTableViewCell.self)
+    }
+    
+    private func setupNavigationBar() {
+        
+        let itemTitle = viewModel.isItemSaved() ? "Remove" : "Save"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: itemTitle, style: .plain, target: self, action: #selector(favoritesButtonAction))
+        
+//        navigationController?.navigationBar.le
+    }
+    
+    @objc private func favoritesButtonAction() {
+        viewModel.didSelectFavotire()
+        let itemTitle = viewModel.isItemSaved() ? "Remove" : "Save"
+        navigationItem.rightBarButtonItem?.title = itemTitle
     }
 }
 
