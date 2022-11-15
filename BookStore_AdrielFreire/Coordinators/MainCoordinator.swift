@@ -17,7 +17,6 @@ final class MainCoordinator: Coordinator {
         let viewController = HomeViewController(homeViewModel)
         navigationController = UINavigationController(rootViewController: viewController)
         self.windowScene = windowScene
-//        homeViewModel.coordinatorDelegate = self
     }
     
     func start() {
