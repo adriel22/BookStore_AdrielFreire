@@ -25,7 +25,7 @@ struct HomeVolumesFactory {
     private func buildVolumeInfo(withTitle tile: String) -> VolumeInfo {
         VolumeInfo(title: tile,
                    description: "Test Volume",
-                   authors: ["Jhon, Anna, Maria"],
+                   authors: ["Jhon", "Anna", "Maria"],
                    imageLinks: ImageLinks(smallThumbnail: "smallThumbnailTest", thumbnail: "ThumbnailTest"))
     }
     
