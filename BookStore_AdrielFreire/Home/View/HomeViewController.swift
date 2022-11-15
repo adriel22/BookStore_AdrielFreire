@@ -30,6 +30,7 @@ extension HomeViewController {
         super.viewDidLoad()
         
         initialSetup()
+        
     }
 }
 
@@ -62,7 +63,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         collectionView.dequeue(withType: BookCollectionViewCell.self, for: indexPath) { cell in
             let volume = self.viewModel.getVolume(forPosition: indexPath.item)
             let thumbnail = volume.volumeInfo.imageLinks.thumbnail
-            cell.setup(withImage: thumbnail)
+            let isItemSaved = self.viewModel.isItemSaved(itemPosition: indexPath.item)
+            cell.setup(withImage: thumbnail, isItemSaved: isItemSaved)
             cell.delegate = self
         }
     }
@@ -96,8 +98,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 // MARK: - Cell Delegate
 extension HomeViewController: BookCollectionViewCellDelegate {
     func bookCollectionViewCell(cell: BookCollectionViewCell, AddedFavorite: Bool) {
-        let index = booksCollectionView.indexPath(for: cell)
-        print(index)
+        if let index = booksCollectionView.indexPath(for: cell) {
+            viewModel.didSelectFavotireItem(inPosition: index.item)
+        }
     }
     
 }

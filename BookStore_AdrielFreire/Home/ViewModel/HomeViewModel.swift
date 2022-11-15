@@ -61,5 +61,19 @@ final class HomeViewModel {
     func didSelectItem(inPosition position: Int) {
         coordinatorDelegate?.homeViewModel(self, didSelectVolume: volumes[position])
     }
+    
+    func didSelectFavotireItem(inPosition position: Int) {
+        if isItemSaved(itemPosition: position) {
+            CoreDataManager.shared.remove(volumes[position].id)
+            return
+        }
+        CoreDataManager.shared.save(volumes[position].id)
+    }
+    
+    func isItemSaved(itemPosition: Int) -> Bool{
+        let ids = CoreDataManager.shared.retrieveSavedIDs()
+        let volume = volumes[itemPosition]
+        return ids.contains(where: {$0 == volume.id})
+    }
 }
 

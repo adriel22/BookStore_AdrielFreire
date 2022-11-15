@@ -15,6 +15,7 @@ struct VolumesDTO: Codable {
 }
 
 struct Volume: Codable {
+    let id: String
     let volumeInfo: VolumeInfo
     let saleInfo: SaleInfo
 }

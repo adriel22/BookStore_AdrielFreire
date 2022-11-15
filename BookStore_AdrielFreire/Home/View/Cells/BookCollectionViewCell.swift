@@ -18,9 +18,13 @@ final class BookCollectionViewCell: UICollectionViewCell {
     
     public weak var delegate: BookCollectionViewCellDelegate?
     
-    func setup(withImage imageURL: String) {
+    func setup(withImage imageURL: String, isItemSaved: Bool) {
         let url = URL(string: imageURL)
         thumbnailImageView.kf.setImage(with: url)
+        
+        let buttonImage = isItemSaved ? UIImage(named: "favoritedIcon") : UIImage(named: "addToFavoritesIcon")
+        favoriteButton.setImage(buttonImage, for: .normal)
+        favoriteButton.isSelected = isItemSaved
     }
 
     @IBAction func didSelectFavorite(_ sender: Any) {

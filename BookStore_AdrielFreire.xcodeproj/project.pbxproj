@@ -41,6 +41,8 @@
 		FCEA9202292415F10079463F /* BookSaleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA9200292415F00079463F /* BookSaleTableViewCell.swift */; };
 		FCEA9203292415F10079463F /* BookSaleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEA9201292415F00079463F /* BookSaleTableViewCell.xib */; };
 		FCEA920629241D970079463F /* BookDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA920529241D960079463F /* BookDetailsViewModelTests.swift */; };
+		FCEA920B292431610079463F /* FavoriteBooksModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCEA9209292431610079463F /* FavoriteBooksModel.xcdatamodeld */; };
+		FCEA920D292432810079463F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA920C292432810079463F /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		FCEA9200292415F00079463F /* BookSaleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSaleTableViewCell.swift; sourceTree = "<group>"; };
 		FCEA9201292415F00079463F /* BookSaleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookSaleTableViewCell.xib; sourceTree = "<group>"; };
 		FCEA920529241D960079463F /* BookDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		FCEA920A292431610079463F /* FavoriteBooksModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteBooksModel.xcdatamodel; sourceTree = "<group>"; };
+		FCEA920C292432810079463F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 		FCEA91852921ACDF0079463F /* BookStore_AdrielFreire */ = {
 			isa = PBXGroup;
 			children = (
+				FCEA92082924313C0079463F /* CoreData */,
 				FCEA91DB2921CEE10079463F /* Commons */,
 				FCEA91D32921CD630079463F /* Coordinators */,
 				FCEA91EE2923F1DB0079463F /* BookDetails */,
@@ -337,6 +342,15 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		FCEA92082924313C0079463F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA9209292431610079463F /* FavoriteBooksModel.xcdatamodeld */,
+				FCEA920C292432810079463F /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -454,6 +468,7 @@
 				FCEA91F22923F2390079463F /* BookDetailsViewController.swift in Sources */,
 				FCEA91C82921B24C0079463F /* BookAPIService.swift in Sources */,
 				FCEA9202292415F10079463F /* BookSaleTableViewCell.swift in Sources */,
+				FCEA920D292432810079463F /* CoreDataManager.swift in Sources */,
 				FCEA91D52921CD8D0079463F /* Coordinator.swift in Sources */,
 				FCEA91BC2921AFBE0079463F /* Cancellable.swift in Sources */,
 				FCEA91C42921B0480079463F /* NetworkService.swift in Sources */,
@@ -461,6 +476,7 @@
 				FCEA91F62923F42E0079463F /* BookDetailsViewModel.swift in Sources */,
 				FCEA91C62921B0C20079463F /* DefaultNetworkProvider.swift in Sources */,
 				FCEA91C22921B02F0079463F /* RequestType.swift in Sources */,
+				FCEA920B292431610079463F /* FavoriteBooksModel.xcdatamodeld in Sources */,
 				FCEA91FE2923FF5A0079463F /* BookDetailTableViewCell.swift in Sources */,
 				FCEA91E229231AB60079463F /* BookCollectionViewCell.swift in Sources */,
 				FCEA91BA2921AF970079463F /* NetworkProvider.swift in Sources */,
@@ -766,6 +782,19 @@
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		FCEA9209292431610079463F /* FavoriteBooksModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FCEA920A292431610079463F /* FavoriteBooksModel.xcdatamodel */,
+			);
+			currentVersion = FCEA920A292431610079463F /* FavoriteBooksModel.xcdatamodel */;
+			path = FavoriteBooksModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FCEA917B2921ACDF0079463F /* Project object */;
 }
