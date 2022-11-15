@@ -9,8 +9,14 @@ import Foundation
 protocol HomeViewModelDelegate: AnyObject {
     func homeViewModel(_ homeViewModel: HomeViewModel, didUpdateVolumes volumes: [Volume])
 }
+
+protocol HomeViewModelCoordinatorDelegate: AnyObject {
+    func homeViewModel(_ viewModel: HomeViewModel, didSelectVolume volume: Volume)
+}
+
 final class HomeViewModel {
     public weak var delegate: HomeViewModelDelegate?
+    public weak var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
     private let networkProvider: NetworkProvider
     private var pageRequest = 0
     private var isRequestInProcess = false
@@ -50,6 +56,10 @@ final class HomeViewModel {
     
     func getVolume(forPosition position: Int) -> Volume {
         return volumes[position]
+    }
+    
+    func didSelectItem(inPosition position: Int) {
+        coordinatorDelegate?.homeViewModel(self, didSelectVolume: volumes[position])
     }
 }
 
