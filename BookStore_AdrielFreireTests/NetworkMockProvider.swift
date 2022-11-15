@@ -19,7 +19,7 @@ final class NetworkMockProvider<T>: NetworkProvider {
         if requestSuccess {
             completion(.success(expectedResult as! T))
         } else {
-            completion(.failure(NSError()))
+            completion(.failure(NSError(domain: "Error", code: 0)))
         }
         return EmptyCancellable()
     }

@@ -31,7 +31,7 @@ final class HomeViewModel {
                 self.volumes = volumes.items
                 self.pageRequest += 1
             case .failure(let error):
-                print("error")
+                debugPrint(error)
             }
         }
     }
