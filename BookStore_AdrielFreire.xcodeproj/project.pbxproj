@@ -34,6 +34,10 @@
 		FCEA91E929232DCB0079463F /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91E829232DCB0079463F /* HomeViewModelTests.swift */; };
 		FCEA91EB29232ED30079463F /* NetworkMockProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91EA29232ED30079463F /* NetworkMockProvider.swift */; };
 		FCEA91ED292330470079463F /* HomeVolumesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91EC292330470079463F /* HomeVolumesFactory.swift */; };
+		FCEA91F22923F2390079463F /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91F02923F2390079463F /* BookDetailsViewController.swift */; };
+		FCEA91F32923F2390079463F /* BookDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEA91F12923F2390079463F /* BookDetailsViewController.xib */; };
+		FCEA91F62923F42E0079463F /* BookDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91F52923F42E0079463F /* BookDetailsViewModel.swift */; };
+		FCEA91F82923F77B0079463F /* BookDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91F72923F77B0079463F /* BookDetailsCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,10 @@
 		FCEA91E829232DCB0079463F /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		FCEA91EA29232ED30079463F /* NetworkMockProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMockProvider.swift; sourceTree = "<group>"; };
 		FCEA91EC292330470079463F /* HomeVolumesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVolumesFactory.swift; sourceTree = "<group>"; };
+		FCEA91F02923F2390079463F /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
+		FCEA91F12923F2390079463F /* BookDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookDetailsViewController.xib; sourceTree = "<group>"; };
+		FCEA91F52923F42E0079463F /* BookDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewModel.swift; sourceTree = "<group>"; };
+		FCEA91F72923F77B0079463F /* BookDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +145,7 @@
 			children = (
 				FCEA91DB2921CEE10079463F /* Commons */,
 				FCEA91D32921CD630079463F /* Coordinators */,
+				FCEA91EE2923F1DB0079463F /* BookDetails */,
 				FCEA91CD2921CCE60079463F /* Home */,
 				FCEA91CA2921B90A0079463F /* Models */,
 				FCEA91B62921AF0F0079463F /* Network */,
@@ -244,6 +253,7 @@
 			children = (
 				FCEA91D42921CD8D0079463F /* Coordinator.swift */,
 				FCEA91D62921CDED0079463F /* MainCoordinator.swift */,
+				FCEA91F72923F77B0079463F /* BookDetailsCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -290,6 +300,32 @@
 				FCEA91EC292330470079463F /* HomeVolumesFactory.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		FCEA91EE2923F1DB0079463F /* BookDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91F42923F40E0079463F /* ViewModel */,
+				FCEA91EF2923F2010079463F /* View */,
+			);
+			path = BookDetails;
+			sourceTree = "<group>";
+		};
+		FCEA91EF2923F2010079463F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91F02923F2390079463F /* BookDetailsViewController.swift */,
+				FCEA91F12923F2390079463F /* BookDetailsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FCEA91F42923F40E0079463F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91F52923F42E0079463F /* BookDetailsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +438,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCEA91F32923F2390079463F /* BookDetailsViewController.xib in Resources */,
 				FCEA91932921ACE80079463F /* LaunchScreen.storyboard in Resources */,
 				FCEA91E329231AB60079463F /* BookCollectionViewCell.xib in Resources */,
 				FCEA91902921ACE80079463F /* Assets.xcassets in Resources */,
@@ -432,11 +469,13 @@
 			files = (
 				FCEA91C02921B0120079463F /* URLSessionDataTask+Cancellable.swift in Sources */,
 				FCEA91D72921CDED0079463F /* MainCoordinator.swift in Sources */,
+				FCEA91F22923F2390079463F /* BookDetailsViewController.swift in Sources */,
 				FCEA91C82921B24C0079463F /* BookAPIService.swift in Sources */,
 				FCEA91D52921CD8D0079463F /* Coordinator.swift in Sources */,
 				FCEA91BC2921AFBE0079463F /* Cancellable.swift in Sources */,
 				FCEA91C42921B0480079463F /* NetworkService.swift in Sources */,
 				FCEA91CC2921B91B0079463F /* BookModel.swift in Sources */,
+				FCEA91F62923F42E0079463F /* BookDetailsViewModel.swift in Sources */,
 				FCEA91C62921B0C20079463F /* DefaultNetworkProvider.swift in Sources */,
 				FCEA91C22921B02F0079463F /* RequestType.swift in Sources */,
 				FCEA91E229231AB60079463F /* BookCollectionViewCell.swift in Sources */,
@@ -445,6 +484,7 @@
 				FCEA91872921ACDF0079463F /* AppDelegate.swift in Sources */,
 				FCEA91892921ACDF0079463F /* SceneDelegate.swift in Sources */,
 				FCEA91DA2921CE790079463F /* HomeViewModel.swift in Sources */,
+				FCEA91F82923F77B0079463F /* BookDetailsCoordinator.swift in Sources */,
 				FCEA91D02921CD210079463F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

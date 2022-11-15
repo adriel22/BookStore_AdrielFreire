@@ -86,6 +86,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             viewModel.requestVolumes()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItem(inPosition: indexPath.item)
+    }
 }
 
 
