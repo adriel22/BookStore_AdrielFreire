@@ -80,6 +80,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                             bottom: 0,
                             right: Constants.cellPadding)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.item == viewModel.getNumberOfVolumes() - 5 {
+            viewModel.requestVolumes()
+        }
+    }
 }
 
 

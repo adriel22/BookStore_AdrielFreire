@@ -9,7 +9,7 @@ import Foundation
 @testable import BookStore_AdrielFreire
 
 final class NetworkMockProvider<T>: NetworkProvider {
-    let expectedResult: T
+    var expectedResult: T
     let requestSuccess: Bool
     init(_ expectedResult: T, requestSuccess: Bool) {
         self.expectedResult = expectedResult

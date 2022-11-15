@@ -9,18 +9,22 @@ import Foundation
 @testable import BookStore_AdrielFreire
 
 struct HomeVolumesFactory {
-    private var volumeInfo: VolumeInfo {
-        VolumeInfo(title: "TestInfo",
-                   imageLinks: ImageLinks(smallThumbnail: "smallThumbnailTest", thumbnail: "ThumbnailTest"))
+    
+    func build(page: Int = 0) -> VolumesDTO {
+        VolumesDTO(items: buildPage(page))
     }
     
-    func build() -> VolumesDTO {
-        let volume1 = Volume(volumeInfo: volumeInfo)
-        let volume2 = Volume(volumeInfo: volumeInfo)
+    private func buildPage(_ pageNumber: Int) -> [Volume] {
+        let volume1 = Volume(volumeInfo: buildVolumeInfo(withTitle: "page\(pageNumber) volume1"))
+        let volume2 = Volume(volumeInfo: buildVolumeInfo(withTitle: "page\(pageNumber) volume2"))
         
-        let volumes = [volume1, volume1]
-        let volumesDTO = VolumesDTO(items: volumes)
-        return volumesDTO
+        return [volume1, volume2]
+    }
+    
+    
+    private func buildVolumeInfo(withTitle tile: String) -> VolumeInfo {
+        VolumeInfo(title: tile,
+                   imageLinks: ImageLinks(smallThumbnail: "smallThumbnailTest", thumbnail: "ThumbnailTest"))
     }
     
 }

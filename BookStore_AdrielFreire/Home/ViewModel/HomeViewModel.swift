@@ -13,6 +13,7 @@ final class HomeViewModel {
     public weak var delegate: HomeViewModelDelegate?
     private let networkProvider: NetworkProvider
     private var pageRequest = 0
+    private var isRequestInProcess = false
     
     private var volumes = [Volume]() {
         didSet {
@@ -25,14 +26,21 @@ final class HomeViewModel {
     }
     
     func requestVolumes() {
+        if isRequestInProcess {
+            return
+        }
+        
+        isRequestInProcess = true
+        
         networkProvider.fetch(model: VolumesDTO.self, with: BookAPIService.getBooks(pageRequest)) { result in
             switch result {
             case .success(let volumes):
-                self.volumes = volumes.items
+                self.volumes.append(contentsOf: volumes.items)
                 self.pageRequest += 1
             case .failure(let error):
                 debugPrint(error)
             }
+            self.isRequestInProcess = false
         }
     }
     
