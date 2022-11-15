@@ -20,6 +20,8 @@ struct Volume: Codable {
 
 struct VolumeInfo: Codable {
     let title: String
+    let description: String?
+    let authors: [String]
     let imageLinks: ImageLinks
 }
 

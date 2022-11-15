@@ -10,6 +10,7 @@ import Kingfisher
 
 final class BookDetailsViewController: UIViewController {
     
+    @IBOutlet weak var detailsTableView: UITableView!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     private let viewModel: BookDetailsViewModel
     
@@ -31,6 +32,7 @@ extension BookDetailsViewController {
         super.viewDidLoad()
         
         setupThumbnail()
+        setupTable()
     }
 }
 
@@ -40,4 +42,25 @@ extension BookDetailsViewController {
         let imageURL = URL(string: viewModel.getThumbnailPath())
         thumbnailImageView.kf.setImage(with: imageURL)
     }
+    
+    private func setupTable() {
+        detailsTableView.dataSource = self
+        detailsTableView.registerCell(type: MovieDetailTableViewCell.self)
+    }
+}
+
+// MARK: - TableView Methods
+extension BookDetailsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.getVolumeDetails().count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.dequeueCell(withType: MovieDetailTableViewCell.self, for: indexPath) { cell in
+            let detail = self.viewModel.getVolumeDetails()[indexPath.item]
+            cell.setup(withTitle: detail.title, content: detail.content)
+        }
+    }
+    
+    
 }

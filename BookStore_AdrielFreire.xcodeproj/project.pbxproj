@@ -38,6 +38,9 @@
 		FCEA91F32923F2390079463F /* BookDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEA91F12923F2390079463F /* BookDetailsViewController.xib */; };
 		FCEA91F62923F42E0079463F /* BookDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91F52923F42E0079463F /* BookDetailsViewModel.swift */; };
 		FCEA91F82923F77B0079463F /* BookDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91F72923F77B0079463F /* BookDetailsCoordinator.swift */; };
+		FCEA91FA2923FEAC0079463F /* UITableView+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91F92923FEAB0079463F /* UITableView+Cells.swift */; };
+		FCEA91FE2923FF5A0079463F /* MovieDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA91FC2923FF5A0079463F /* MovieDetailTableViewCell.swift */; };
+		FCEA91FF2923FF5A0079463F /* MovieDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEA91FD2923FF5A0079463F /* MovieDetailTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +95,9 @@
 		FCEA91F12923F2390079463F /* BookDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookDetailsViewController.xib; sourceTree = "<group>"; };
 		FCEA91F52923F42E0079463F /* BookDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewModel.swift; sourceTree = "<group>"; };
 		FCEA91F72923F77B0079463F /* BookDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsCoordinator.swift; sourceTree = "<group>"; };
+		FCEA91F92923FEAB0079463F /* UITableView+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cells.swift"; sourceTree = "<group>"; };
+		FCEA91FC2923FF5A0079463F /* MovieDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailTableViewCell.swift; sourceTree = "<group>"; };
+		FCEA91FD2923FF5A0079463F /* MovieDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				FCEA91DD29231A5A0079463F /* UICollectionView+Cells.swift */,
+				FCEA91F92923FEAB0079463F /* UITableView+Cells.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -314,6 +321,7 @@
 		FCEA91EF2923F2010079463F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FCEA91FB2923FF3C0079463F /* Cells */,
 				FCEA91F02923F2390079463F /* BookDetailsViewController.swift */,
 				FCEA91F12923F2390079463F /* BookDetailsViewController.xib */,
 			);
@@ -326,6 +334,15 @@
 				FCEA91F52923F42E0079463F /* BookDetailsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FCEA91FB2923FF3C0079463F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FCEA91FC2923FF5A0079463F /* MovieDetailTableViewCell.swift */,
+				FCEA91FD2923FF5A0079463F /* MovieDetailTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +458,7 @@
 				FCEA91F32923F2390079463F /* BookDetailsViewController.xib in Resources */,
 				FCEA91932921ACE80079463F /* LaunchScreen.storyboard in Resources */,
 				FCEA91E329231AB60079463F /* BookCollectionViewCell.xib in Resources */,
+				FCEA91FF2923FF5A0079463F /* MovieDetailTableViewCell.xib in Resources */,
 				FCEA91902921ACE80079463F /* Assets.xcassets in Resources */,
 				FCEA91D12921CD210079463F /* HomeViewController.xib in Resources */,
 			);
@@ -468,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCEA91C02921B0120079463F /* URLSessionDataTask+Cancellable.swift in Sources */,
+				FCEA91FA2923FEAC0079463F /* UITableView+Cells.swift in Sources */,
 				FCEA91D72921CDED0079463F /* MainCoordinator.swift in Sources */,
 				FCEA91F22923F2390079463F /* BookDetailsViewController.swift in Sources */,
 				FCEA91C82921B24C0079463F /* BookAPIService.swift in Sources */,
@@ -478,6 +497,7 @@
 				FCEA91F62923F42E0079463F /* BookDetailsViewModel.swift in Sources */,
 				FCEA91C62921B0C20079463F /* DefaultNetworkProvider.swift in Sources */,
 				FCEA91C22921B02F0079463F /* RequestType.swift in Sources */,
+				FCEA91FE2923FF5A0079463F /* MovieDetailTableViewCell.swift in Sources */,
 				FCEA91E229231AB60079463F /* BookCollectionViewCell.swift in Sources */,
 				FCEA91BA2921AF970079463F /* NetworkProvider.swift in Sources */,
 				FCEA91DE29231A5A0079463F /* UICollectionView+Cells.swift in Sources */,
