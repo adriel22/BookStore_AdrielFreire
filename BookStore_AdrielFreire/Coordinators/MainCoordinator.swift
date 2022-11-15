@@ -13,7 +13,7 @@ final class MainCoordinator: Coordinator {
     private var window: UIWindow?
     
     init(withScene windowScene: UIWindowScene) {
-        let homeViewModel = HomeViewModel()
+        let homeViewModel = HomeViewModel(DefaultNetworkProvider())
         let viewController = HomeViewController(homeViewModel)
         navigationController = UINavigationController(rootViewController: viewController)
         self.windowScene = windowScene

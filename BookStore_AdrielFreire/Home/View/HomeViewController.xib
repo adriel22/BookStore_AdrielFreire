@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="BookStore_AdrielFreire" customModuleProvider="target">
             <connections>
+                <outlet property="booksCollectionView" destination="wda-Iq-jMy" id="mcK-es-CXY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +18,26 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wda-Iq-jMy">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YRg-eH-DeT">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wda-Iq-jMy" secondAttribute="trailing" id="2uG-1l-kWy"/>
+                <constraint firstItem="wda-Iq-jMy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Gsu-VR-vsG"/>
+                <constraint firstItem="wda-Iq-jMy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dIC-C9-G2N"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wda-Iq-jMy" secondAttribute="bottom" id="p3B-J9-626"/>
+            </constraints>
             <point key="canvasLocation" x="58" y="21"/>
         </view>
     </objects>
