@@ -24,7 +24,7 @@ final class BookDetailsViewModel {
         details.append(BookDetail(title: "Title:", content:
                                     volume.volumeInfo.title))
         details.append(BookDetail(title: "Description:",
-                                  content: volume.volumeInfo.description ?? ""))
+                                  content: volume.volumeInfo.bookDescription ?? ""))
         details.append(BookDetail(title: "Authors",
                                   content: getAuthorsString()))
         
@@ -43,5 +43,18 @@ final class BookDetailsViewModel {
         
         authors = String(authors.dropLast(2))
         return authors
+    }
+    
+    func didSelectFavotire() {
+        if isItemSaved() {
+            CoreDataManager.shared.remove(volume)
+            return
+        }
+        CoreDataManager.shared.save(volume)
+    }
+    
+    func isItemSaved() -> Bool{
+        let volumes = CoreDataManager.shared.retrieveSavedVolumes()
+        return volumes.contains(where: {$0.id == volume.id})
     }
 }

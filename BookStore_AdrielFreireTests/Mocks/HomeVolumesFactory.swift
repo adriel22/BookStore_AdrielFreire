@@ -15,8 +15,8 @@ struct HomeVolumesFactory {
     }
     
     private func buildPage(_ pageNumber: Int) -> [Volume] {
-        let volume1 = Volume(volumeInfo: buildVolumeInfo(withTitle: "page\(pageNumber) volume1"), saleInfo: SaleInfo(buyLink: "TestLink"))
-        let volume2 = Volume(volumeInfo: buildVolumeInfo(withTitle: "page\(pageNumber) volume2"), saleInfo: SaleInfo(buyLink: nil))
+        let volume1 = Volume(id: "0", volumeInfo: buildVolumeInfo(withTitle: "page\(pageNumber) volume1"), saleInfo: SaleInfo(buyLink: "TestLink"))
+        let volume2 = Volume(id: "1", volumeInfo: buildVolumeInfo(withTitle: "page\(pageNumber) volume2"), saleInfo: SaleInfo(buyLink: nil))
         
         return [volume1, volume2]
     }

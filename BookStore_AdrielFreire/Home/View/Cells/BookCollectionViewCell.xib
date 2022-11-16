@@ -19,20 +19,37 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TlZ-NR-GmH">
                         <rect key="frame" x="0.0" y="0.0" width="135" height="201"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5D-IS-GCq">
+                        <rect key="frame" x="75" y="10" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="7W8-FM-NoG"/>
+                            <constraint firstAttribute="height" constant="50" id="jjR-bA-H46"/>
+                        </constraints>
+                        <buttonConfiguration key="configuration" style="plain" image="addToFavoritesIcon" title=""/>
+                        <connections>
+                            <action selector="didSelectFavorite:" destination="-1" eventType="touchUpInside" id="aMh-Z0-kiS"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="k5D-IS-GCq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="1ZD-hd-7nd"/>
                 <constraint firstAttribute="bottom" secondItem="TlZ-NR-GmH" secondAttribute="bottom" id="6IK-Fz-ZNB"/>
+                <constraint firstAttribute="trailing" secondItem="k5D-IS-GCq" secondAttribute="trailing" constant="10" id="Exf-fv-y1Y"/>
                 <constraint firstItem="TlZ-NR-GmH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="KtJ-xe-sbB"/>
                 <constraint firstItem="TlZ-NR-GmH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="V5i-Uc-ocu"/>
                 <constraint firstAttribute="trailing" secondItem="TlZ-NR-GmH" secondAttribute="trailing" id="Wsc-Fp-7q7"/>
             </constraints>
             <size key="customSize" width="135" height="201"/>
             <connections>
+                <outlet property="favoriteButton" destination="k5D-IS-GCq" id="hxn-SU-e4C"/>
                 <outlet property="thumbnailImageView" destination="TlZ-NR-GmH" id="ACf-E7-acj"/>
             </connections>
             <point key="canvasLocation" x="142.74809160305344" y="72.887323943661968"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="addToFavoritesIcon" width="50" height="50"/>
+    </resources>
 </document>

@@ -33,7 +33,7 @@ final class HomeViewModelTests: XCTestCase {
         // Then
         XCTAssertTrue(spy.calledDidUpdateVolumes)
         XCTAssertEqual(spy.updatedVolumes.count, 2)
-        XCTAssertEqual(sut?.getNumberOfVolumes(), spy.updatedVolumes.count)
+        XCTAssertEqual(sut?.getNumberOfVolumes(false), spy.updatedVolumes.count)
     }
     
     func testRequestVolumesFailed() {
@@ -68,7 +68,7 @@ final class HomeViewModelTests: XCTestCase {
         // Then
         XCTAssertTrue(spy.calledDidUpdateVolumes)
         XCTAssertEqual(spy.updatedVolumes.count, 6)
-        XCTAssertEqual(sut?.getNumberOfVolumes(), spy.updatedVolumes.count)
+        XCTAssertEqual(sut?.getNumberOfVolumes(false), spy.updatedVolumes.count)
         XCTAssertEqual(spy.updatedVolumes[0].volumeInfo.title, "page0 volume1")
         XCTAssertEqual(spy.updatedVolumes[1].volumeInfo.title, "page0 volume2")
         XCTAssertEqual(spy.updatedVolumes[2].volumeInfo.title, "page1 volume1")
