@@ -24,7 +24,7 @@ final class BookDetailsViewModel {
         details.append(BookDetail(title: "Title:", content:
                                     volume.volumeInfo.title))
         details.append(BookDetail(title: "Description:",
-                                  content: volume.volumeInfo.bookDescrption ?? ""))
+                                  content: volume.volumeInfo.bookDescription ?? ""))
         details.append(BookDetail(title: "Authors",
                                   content: getAuthorsString()))
         
