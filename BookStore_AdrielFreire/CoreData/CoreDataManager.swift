@@ -19,11 +19,11 @@ final class CoreDataManager: NSObject {
         return appDelegate.persistentContainer.viewContext
     }
     
-    func save(_ id: String) {
+    func save(_ volume: Volume) {
         guard let context = getContext() else {return}
         
         let favoriteVolume = SavedVolume(context: context)
-        favoriteVolume.setValue(id, forKey: "id")
+        favoriteVolume.setValue(volume, forKey: "volume")
         do {
             try context.save()
         } catch let error as NSError {
@@ -31,14 +31,14 @@ final class CoreDataManager: NSObject {
         }
     }
     
-    func remove(_ id: String) {
+    func remove(_ volume: Volume) {
         guard let context = getContext() else {return}
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedVolume")
         do {
             let result = try context.fetch(request) as! [SavedVolume]
-            result.forEach { volume in
-                if volume.id == id {
-                    context.delete(volume)
+            result.forEach { requestedVolume in
+                if volume.id == requestedVolume.volume?.id {
+                    context.delete(requestedVolume)
                 }
             }
             try context.save()
@@ -49,17 +49,17 @@ final class CoreDataManager: NSObject {
         
     }
     
-    func retrieveSavedIDs() -> [String] {
+    func retrieveSavedVolumes() -> [Volume] {
         guard let context = getContext() else {return []}
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedVolume")
-        var ids = [String]()
+        var volumes = [Volume]()
         do {
             let result = try context.fetch(request) as! [SavedVolume]
-            ids = result.map({$0.id ?? ""})
+            volumes = result.compactMap({$0.volume})
 
         } catch let error as NSError {
             print("Retrieving user failed. \(error): \(error.userInfo)")
         }
-        return ids
+        return volumes
     }
 }

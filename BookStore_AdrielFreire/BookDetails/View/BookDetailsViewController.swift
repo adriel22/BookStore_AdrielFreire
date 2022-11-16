@@ -51,11 +51,8 @@ extension BookDetailsViewController {
     }
     
     private func setupNavigationBar() {
-        
         let itemTitle = viewModel.isItemSaved() ? "Remove" : "Save"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: itemTitle, style: .plain, target: self, action: #selector(favoritesButtonAction))
-        
-//        navigationController?.navigationBar.le
     }
     
     @objc private func favoritesButtonAction() {

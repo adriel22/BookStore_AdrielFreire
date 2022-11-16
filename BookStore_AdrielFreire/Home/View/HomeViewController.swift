@@ -11,6 +11,8 @@ final class HomeViewController: UIViewController {
     private let viewModel: HomeViewModel
     @IBOutlet private weak var booksCollectionView: UICollectionView!
     
+    private var isShowingOnlySaveds = false
+    
     init(_ viewModel: HomeViewModel) {
         self.viewModel = viewModel
         
@@ -45,6 +47,8 @@ extension HomeViewController {
         
         viewModel.delegate = self
         viewModel.requestVolumes()
+        
+        setupNavigationBar()
     }
     
     private func getCellSize() -> CGSize {
@@ -53,19 +57,31 @@ extension HomeViewController {
         let cellHeight = 2 * cellWidth
         return CGSize(width: cellWidth, height: cellHeight)
     }
+    
+    private func setupNavigationBar() {
+        let itemTitle = isShowingOnlySaveds ? "Show all" : "Show favorites"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: itemTitle, style: .plain, target: self, action: #selector(toggleShowFavoritesOnly))
+    }
+    
+    @objc private func toggleShowFavoritesOnly() {
+        isShowingOnlySaveds = !isShowingOnlySaveds
+        let itemTitle = isShowingOnlySaveds ? "Show all" : "Show favorites"
+        navigationItem.rightBarButtonItem?.title = itemTitle
+        booksCollectionView.reloadData()
+    }
 }
 
 // MARK: - Collection Methods
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.getNumberOfVolumes()
+        viewModel.getNumberOfVolumes(isShowingOnlySaveds)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         collectionView.dequeue(withType: BookCollectionViewCell.self, for: indexPath) { cell in
-            let volume = self.viewModel.getVolume(forPosition: indexPath.item)
+            let volume = self.viewModel.getVolume(forPosition: indexPath.item, showingFavorites: self.isShowingOnlySaveds)
             let thumbnail = volume.volumeInfo.imageLinks.thumbnail
-            let isItemSaved = self.viewModel.isItemSaved(itemPosition: indexPath.item)
+            let isItemSaved = self.viewModel.isItemSaved(itemPosition: indexPath.item, showingFavorites: self.isShowingOnlySaveds)
             cell.setup(withImage: thumbnail, isItemSaved: isItemSaved)
             cell.delegate = self
         }
@@ -87,13 +103,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.item == viewModel.getNumberOfVolumes() - 5 {
+        if indexPath.item == viewModel.getNumberOfVolumes(isShowingOnlySaveds) - 5 {
             viewModel.requestVolumes()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.didSelectItem(inPosition: indexPath.item)
+        viewModel.didSelectItem(inPosition: indexPath.item, showingFavorites: isShowingOnlySaveds)
     }
 }
 
@@ -101,7 +117,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 extension HomeViewController: BookCollectionViewCellDelegate {
     func bookCollectionViewCell(cell: BookCollectionViewCell, AddedFavorite: Bool) {
         if let index = booksCollectionView.indexPath(for: cell) {
-            viewModel.didSelectFavotireItem(inPosition: index.item)
+            viewModel.didSelectFavotireItem(inPosition: index.item, showingFavorites: isShowingOnlySaveds)
         }
     }
     

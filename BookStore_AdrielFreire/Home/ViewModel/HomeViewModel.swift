@@ -50,30 +50,46 @@ final class HomeViewModel {
         }
     }
     
-    func getNumberOfVolumes() -> Int {
+    func getNumberOfVolumes(_ showingFavorites: Bool) -> Int {
+        if showingFavorites {
+            return CoreDataManager.shared.retrieveSavedVolumes().count
+        }
         return volumes.count
     }
     
-    func getVolume(forPosition position: Int) -> Volume {
+    func getVolume(forPosition position: Int, showingFavorites: Bool) -> Volume {
+        if showingFavorites {
+            return CoreDataManager.shared.retrieveSavedVolumes()[position]
+        }
         return volumes[position]
     }
     
-    func didSelectItem(inPosition position: Int) {
+    func didSelectItem(inPosition position: Int, showingFavorites: Bool) {
+        if showingFavorites {
+            let volume = CoreDataManager.shared.retrieveSavedVolumes()[position]
+            coordinatorDelegate?.homeViewModel(self, didSelectVolume: volume)
+            return
+        }
         coordinatorDelegate?.homeViewModel(self, didSelectVolume: volumes[position])
     }
     
-    func didSelectFavotireItem(inPosition position: Int) {
-        if isItemSaved(itemPosition: position) {
-            CoreDataManager.shared.remove(volumes[position].id)
+    func didSelectFavotireItem(inPosition position: Int, showingFavorites: Bool) {
+        if isItemSaved(itemPosition: position, showingFavorites: showingFavorites) {
+            let volume = showingFavorites ? CoreDataManager.shared.retrieveSavedVolumes() : volumes
+            CoreDataManager.shared.remove(volume[position])
             return
         }
-        CoreDataManager.shared.save(volumes[position].id)
+        CoreDataManager.shared.save(volumes[position])
     }
     
-    func isItemSaved(itemPosition: Int) -> Bool{
-        let ids = CoreDataManager.shared.retrieveSavedIDs()
+    func isItemSaved(itemPosition: Int, showingFavorites: Bool) -> Bool{
+        let savedVolumes = CoreDataManager.shared.retrieveSavedVolumes()
+        if showingFavorites {
+            let volume = savedVolumes[itemPosition]
+            return savedVolumes.contains(where: {$0.id == volume.id})
+        }
         let volume = volumes[itemPosition]
-        return ids.contains(where: {$0 == volume.id})
+        return savedVolumes.contains(where: {$0.id == volume.id})
     }
 }
 
